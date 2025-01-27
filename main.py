@@ -1,15 +1,15 @@
 import time
 import os
-from art import text2art
+from pyfiglet import Figlet
+f = Figlet(font='larry3d')
 
-def countdownTimer(seconds):
+def countdown_timer(seconds):
     for i in range(seconds, -1, -1):
-        os.system("clear")
-        ascii_art = text2art(str(i))
-        print(ascii_art)
+        os.system("clear")  # Clear the terminal (use 'cls' on Windows)
+        #ascii_art = pyfiglet.figlet_format(str(i))
+        print(f.renderText(str(i)))
+        #print(ascii_art)
         time.sleep(1)
 
-countdownTimer(10)
-
-# first i need to take input from the user.
-# then convert the time into minutes and seconds.
+# Set the countdown duration in seconds
+countdown_timer(10)
