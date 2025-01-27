@@ -9,7 +9,7 @@ f = Figlet(font='larry3d')
 def countdown_timer(inputMinute, inputSecond):
     totalTime = inputMinute*60+inputSecond
 
-    mpv_process = subprocess.Popen(['mpv', '--no-video', '--no-terminal', 'https://www.youtube.com/watch?v=OgU_UDYd9lY&t=913s'])
+    mpv_process = subprocess.Popen(['mpv', '--no-video', '--no-terminal', 'https://www.youtube.com/watch?v=jfKfPfyJRdk'])
 
     terminal_width = shutil.get_terminal_size().columns
     terminal_height = shutil.get_terminal_size().lines
