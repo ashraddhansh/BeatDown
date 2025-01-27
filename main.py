@@ -1,6 +1,7 @@
 import time
 import os
 import sys
+import shutil
 import subprocess
 from pyfiglet import Figlet
 f = Figlet(font='larry3d')
@@ -8,7 +9,10 @@ f = Figlet(font='larry3d')
 def countdown_timer(inputMinute, inputSecond):
     totalTime = inputMinute*60+inputSecond
 
-    mpv_process = subprocess.Popen(['mpv', '--no-video', '--no-terminal', 'https://www.youtube.com/watch?v=LY_rMXXuJp8'])
+    mpv_process = subprocess.Popen(['mpv', '--no-video', '--no-terminal', 'https://www.youtube.com/watch?v=OgU_UDYd9lY&t=913s'])
+
+    terminal_width = shutil.get_terminal_size().columns
+    terminal_height = shutil.get_terminal_size().lines
 
 
     for i in range(totalTime, -1 ,-1):
@@ -17,7 +21,16 @@ def countdown_timer(inputMinute, inputSecond):
         realSeconds = i%60
 
         time_str = f"{realMinute:02}:{realSeconds:02}"
-        print(f.renderText(time_str))
+        ascii_time = f.renderText(time_str)
+
+        padding = (terminal_width - len(ascii_time.splitlines()[0]))//2
+        top_padding = terminal_height//2
+        
+        print("\n"*top_padding)
+
+
+        for  line in ascii_time.splitlines():
+            print(' '*padding+ line)
         time.sleep(1)
     mpv_process.terminate()
 
