@@ -1,6 +1,9 @@
 # BeatDown: A countdown timer with Music
 
 BeatDown is a TUI timer written in python that also plays music.
+
+![showcase](BeatDown.gif)
+
 ## Features
 - Display a countdown timer in ASCII art format.
 - Plays your favorite music in background using `mpv`.
