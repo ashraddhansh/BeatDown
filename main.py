@@ -5,7 +5,6 @@ import shutil
 import subprocess
 from pyfiglet import Figlet
 f = Figlet(font='larry3d')
-
 def countdown_timer(inputMinute, inputSecond):
     totalTime = inputMinute*60+inputSecond
 
@@ -48,14 +47,3 @@ if __name__== "__main__":
     except ValueError:
         print("Please provide valid integers for both inputs!")
 
-
-
-# Set the countdown duration in seconds
-
-
-
-
-
-# first i need to ask for the time for timer.
-# then convert that into minutes and seconds.
-# then start the countdown in minutes and seconds.
